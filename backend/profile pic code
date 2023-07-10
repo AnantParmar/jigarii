@@ -1,0 +1,18 @@
+const [img,setImg] = useState('');
+    const handleImg = (e) => {
+      console.log(e.target.files)
+      setImg(e.target.files[0])
+    }
+
+// const formData = new FormData();
+//       formData.append('profile',img) 
+//       axios.post('http://localhost:5000/api/auth/uploadPic',formData).then((res)=>{
+//         console.log(res);
+//       })
+
+{/* <div id='profilePicDiv'>
+                <label htmlFor='profilePic'></label>Profile Pic
+                <input type='file' accept="image/png, image/jpg, image/jpeg" name='profilePic' id='profilePic' onChange={handleImg}/>
+                <button onClick={uploadPic}>Upload</button>
+            </div> */}
+

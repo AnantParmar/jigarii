@@ -1,0 +1,11 @@
+.mainDiv {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    /* background-color: darkblue; */
+    overflow: scroll;
+    /* background-color: aqua; */
+    position: relative;
+}

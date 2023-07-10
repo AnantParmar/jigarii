@@ -1,0 +1,62 @@
+#quoteMainDiv {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgb(99, 172, 172);
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    box-shadow: 0px 0px 15px 9px black;
+    margin: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#quoteMainDiv > div {
+    margin: 10px 0px;
+}
+#quoteOwnerDiv {
+    height: 40px;
+    width: 90%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+#ownerNameSpan {
+    height: 90%;
+    width: fit-content;
+}
+#ownerPhotoSpan {
+    height: 45px;
+    width: 45px;
+    margin-right: 10px;
+}
+#ownerPhotoSpan > img{
+    object-fit: cover;
+    object-position: 25% 25%;
+    border-radius: 50%;
+}
+#quoteContent {
+    height: 70%;
+    width: 100%;
+    padding-left: 2px;
+    /* background-color: rgb(116, 80, 150); */
+}
+#quoteBtnDiv {
+    height: 30%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.quoteBtn {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+}
+

@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 100%;
+    /* padding: 5px; */
+    background-color: #000;
+    height: 50px;
+    top: 0;
+    left: 0;
+    position: sticky;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+#navMainDiv {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    height: 50px;
+}
+
+#logoDiv{
+    width: 45px;
+    height: 45px;
+    background-color: #234;
+    border-radius: 50%;
+    margin-left: 50px;
+}
+#logoSpan{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 25% 25%; 
+}
+
+#profileMenuUl {
+    display : none;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 230px;
+    width: 260px;
+    flex-direction: column;
+    background-color: #456;
+    position: absolute;
+    top: 60px;
+    list-style: none;
+    
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#profileMenuUl > li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 25%;
+    width: 100%;
+    padding: 10px;
+    /* border-bottom: 0.5px solid #000; */
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#profileMenuUl > li:hover {
+    background-color: gray;
+}
+
+
+#profileUl {
+    display: none;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100px;
+    position: absolute;
+    left: 265px;
+    top: 130px;
+    width: 100px;
+    background-color: aquamarine;
+    list-style: none;
+    
+    cursor: pointer;
+} 
+
+#profileUl > li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 33%;
+    width: 100%;
+    padding: 10px;
+    /* padding-left: 5px; */
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#profileUl> li:hover {
+    background-color: gray;
+}
+#profileMenuUlSpan, #profileUlSpan  {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+#profileMenuUlSpan>i, #profileUlSpan>i {
+    margin-right: 5px;
+}
+#menuDiv {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logoutBtn {
+    padding: 10px 0px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+}
+#userDataSpan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#userDataSpan > img, #userDataSpan > svg {
+    margin-right: 5px;
+}
+#menuDiv {
+    width: 627px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 430px;
+}
+#menuUl {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+}
+
+.menuLi {
+    padding: 10px;
+    background-color: #456;
+}
+
+.menuA {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* #followerWiseLi {
+    margin-left: 50px;
+    margin-right: 50px;
+} */
+
+#profilePicDiv {
+    display: none;
+    /* display: inline-flex; */
+    align-items: center;
+    justify-content: space-around ;
+    flex-direction: column;
+    background-color: cadetblue;
+    width: 30%;
+
+    height: 20%;
+    position: fixed;
+    top: 30%;
+    margin: 0px 30%;
+    z-index: 3;
+}
+
+#btnDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px 20px ;
+}
+#btnDiv > button {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#uploadImg {
+    display: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 25% 25%; 
+}
+#postQuoteDiv {
+    position: absolute;
+    top: 28px;
+    left: 49%;
+    height: 45px;
+    width: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#postQuote {
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+#postQuoteIcon {
+    height: 100%;
+    width: 100%;
+    font-size: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: solid 10px #000;
+    border-radius: 50%;
+}
