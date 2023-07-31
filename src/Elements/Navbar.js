@@ -4,13 +4,13 @@ import '../CSS/Navbar.css'
 import quoteContext from '../context/quotes/quoteContext'
 import axios from 'axios'
 const Navbar = () => {
-    const {user, setUser, data,imgURL, setData, getUser,setImgURL} = useContext(quoteContext);
+    const {user, setUser,imgURL, getUser,setImgURL} = useContext(quoteContext);
     // console.log(user)
     const navigate = useNavigate();
     const location = useLocation();
     const [img,setImg] = useState('');
-    var [loading,setLoading] = useState(false);
-    const [imgSrc,setImgSrc] = useState('');
+    // var [loading,setLoading] = useState(false);
+    // const [imgSrc,setImgSrc] = useState('');
     
     
     const closePicFormDiv = ()=>{
@@ -78,16 +78,18 @@ const Navbar = () => {
         e.preventDefault();
         const profileMenuUl = document.getElementById('profileMenuUl')
         const profileUl = document.getElementById('profileUl')
-        if(profileUl.style.display == "inline-flex")
+        if(profileUl.style.display === "inline-flex")
         profileUl.style.display = "none"
-        profileMenuUl.style.display == "inline-flex" ? profileMenuUl.style.display = "none" : profileMenuUl.style.display = "inline-flex"
+        profileMenuUl.style.display === "inline-flex" ? profileMenuUl.style.display = "none" : profileMenuUl.style.display = "inline-flex"
+        closePicFormDiv()
         
     }
     const onUpdateProfile = (e) => {
         e.preventDefault();
         const profileUl = document.getElementById('profileUl')
         // console.log("kjfjghfkjg")
-        profileUl.style.display == "inline-flex" ? profileUl.style.display = "none" : profileUl.style.display = "inline-flex"
+        profileUl.style.display === "inline-flex" ? profileUl.style.display = "none" : profileUl.style.display = "inline-flex"
+        closePicFormDiv()
     }
 
     const logout = (e) => {
@@ -145,7 +147,7 @@ const Navbar = () => {
                     
                     
                 </div>
-                <div id='menuDiv'>
+                {/* <div id='menuDiv'>
                     <ul id='menuUl'>
                         <li id='rankWiseLi' className='menuLi'>
                             <a className='menuA' href='/'>Rank Wise</a>
@@ -155,12 +157,12 @@ const Navbar = () => {
                         </li>
                         
                     </ul>
-                </div>
+                </div> */}
                 
             </div>
         </nav>
         <div id='profilePicDiv'>
-            <img id='uploadImg' src="" width="100" height="100"></img>
+            <img id='uploadImg' src="" width="100" height="100" alt='logo'></img>
             <input type='file' accept="image/png, image/jpg, image/jpeg" name='profilePic' id='profilePic' onChange={handleImg}/>
             <div id='btnDiv'>
                 <button disabled={!img} onClick={uploadPic} id='imgUploadBtn'><i id='imgUploadBtnIcon' className="fa-solid fa-upload"></i></button>

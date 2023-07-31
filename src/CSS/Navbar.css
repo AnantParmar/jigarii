@@ -242,3 +242,22 @@ nav {
     border: solid 10px #000;
     border-radius: 50%;
 }
+
+@media screen and (max-width: 400px) {
+    #logoDiv {
+       margin-left: 5px; 
+    }
+    #postQuoteDiv {
+        left: 43%;
+    }
+    #profileMenuUl {
+       width: 150px; 
+    }
+    #profileUl {
+        left:155px;
+    }
+    #profilePicDiv {
+        width: 66%;
+        top: 43%;
+    }
+}

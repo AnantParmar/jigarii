@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import QuoteContext from "./quoteContext";
 
 const QuoteState = (props)=> {
@@ -25,6 +25,27 @@ const QuoteState = (props)=> {
             console.log(error)
         })
     }
+    const updateLikeCount= (likeCount,updateValue,docId,uid)=> {
+        const val = likeCount + updateValue;
+
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ val: updateValue, docId: docId,uid:uid }) 
+            
+        };
+        fetch('http://localhost:5000/api/quote/updateLikeCount',requestOptions)
+        .then(async (response)=>{
+            const resPonse = await response.json();
+            console.log(resPonse)
+            return resPonse.result;
+            
+            // setUser(resPonse.user)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
     const getQuotes = async () => {
         setLoading(true)
         const response = await fetch(`http://localhost:5000/api/quote/getQuotes`, {
@@ -34,34 +55,13 @@ const QuoteState = (props)=> {
             }
           });
         const json = await response.json();
-        setLoading(false)
         console.log(json)
+        setLoading(false)
         setQuotes(json)
-        console.log(quotes)
-        // const requestOptions = {
-        //     method: 'GET',
-        //     headers: { 'Content-Type': 'application/json' },
-        // };
 
-        // fetch('http://localhost:5000/api/quote/getQuotes',requestOptions)
-        // .then(async (response)=>{
-        //     const resPonse = await response.json();
-        //     console.log(resPonse)
-        //     const newArray = resPonse.map((item) => ({
-        //         docId : item.docId,
-        //         data: item.docData
-        //       }));
-        //       console.log(newArray)
-        //     setQuotes(resPonse)
-        //     console.log(quotes)
-        //     // setUser(resPonse.user)
-        // })
-        // .catch((error)=>{
-        //     console.log(error)
-        // })
     }
     return (
-        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes}}>
+        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount}}>
             {props.children}
         </QuoteContext.Provider>
     )

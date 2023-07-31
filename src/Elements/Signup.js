@@ -95,9 +95,9 @@ const Signup = () => {
                 <input required type='text' name='repassword' id='repassword' value={repassword} onChange={e=> setRepassword(e.target.value)}/>
             </div>
             <h4 id='error'></h4>
-            <h5 style={{margin: "10px 0px"}}>Already have Account? <span style={{color: 'blue', textDecoration: 'Underline', cursor: "pointer"}} onClick={()=>{navigate('/login')}}>Login</span></h5>
             <div id='submitDiv'>
-                <input type='submit' value={"Signup"}/>
+            <h5 style={{margin: "10px 0px"}}>Already have Account? <span style={{color: 'blue', textDecoration: 'Underline', cursor: "pointer"}} onClick={()=>{navigate('/login')}}>Login</span></h5>
+                <input disabled={!name||!email||!password||!repassword} type='submit' value={"Signup"}/>
             </div>
         </form>        
 

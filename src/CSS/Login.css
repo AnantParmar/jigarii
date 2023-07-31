@@ -3,12 +3,11 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center; 
 }
 
 #loginFormDiv {
-    background-color: rgba(0,0,0,0.1);
+    /* background-color: rgba(0,0,0,0.1); */
     backdrop-filter: blur(20px);
     position: absolute;
     width: 50%;
@@ -18,11 +17,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0px 0px 15px 20px black;
+    box-shadow: 0px 0px 15px 10px rgb(65, 59, 59);
+    box-sizing: border-box;
 }
 
 #loginForm {
-    height: 50%;
+    height: 70%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -36,7 +36,7 @@
     height: 25%;
     display: flex;
     align-items: center;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 } 
 
 .inputDiv> input:hover {
@@ -61,4 +61,36 @@
 #error {
     color: red;
     margin: 15px 0px;
+}
+
+@media only screen and (max-width: 400px){
+    #loginFormDiv {
+        width: 90%;
+    } 
+    #loginForm {
+        align-items: flex-start;
+    }
+    #loginForm > div {
+        width: 100%;
+    }
+    #usernameDiv > label {
+        width: 125px;
+        margin-right: 0;
+    }
+    #loginForm > div#passwordDiv > label {
+        margin-right: 42px;
+    }
+    #loginForm > div#passwordDiv > input {
+        margin-right: 5px;
+    }
+    #loginForm > div#passwordDiv > button {
+        margin-right: 0;
+    }
+    #loginForm > div#submitDiv {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 100px;
+    }
 }

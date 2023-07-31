@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const {signInWithEmailAndPassword,createUserWithEmailAndPassword,updateProfile,sendEmailVerification} = require('firebase/auth')
-const {setDoc,collection,doc,add} = require('firebase/firestore');
+const {setDoc,collection,doc,query,getDocs,where} = require('firebase/firestore');
 const { ref, getDownloadURL, uploadBytesResumable } = require('firebase/storage');
 const {auth,storage,db} = require('../config.js')
 const bodyParser = require('body-parser');
@@ -109,7 +109,18 @@ router.post('/login', async (req, res)=>{
             return res.send({result :false ,msg:"The email is not verified yet."})
         }
         else {
-            return res.send({result:true,data:response});
+            const q1 = query(collection(db, "likedByUser"), where("user", "==", response.user.uid));
+            // console.log(q1);
+            const quote = await getDocs(q1);
+            // console.log(quote)
+            var likedQuotesData = [];
+            for (let index = 0; index < quote.docs.length; index++) {
+                const docd = quote.docs[index];
+                const docData = docd.data()
+                console.log(docData)
+                likedQuotesData.push(docData);
+            }
+            return res.send({result:true,data:response,likedQuotesData:likedQuotesData});
         }
     })
     .catch((error) => {

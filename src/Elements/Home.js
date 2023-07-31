@@ -4,7 +4,7 @@ import '../CSS/Home.css'
 import Quotes from './Quotes'
 import Loading from './Loading'
 const Home = () => {
-  const {getQuotes} = useContext(quoteContext)
+  const {getQuotes,quotes} = useContext(quoteContext)
   useEffect(() => {
     console.log("Component mounted!");
     getQuotes()

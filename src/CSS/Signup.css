@@ -18,7 +18,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0px 0px 15px 20px black;
+    box-shadow: 0px 0px 15px 10px rgb(65, 59, 59);
+    box-sizing: border-box;
 }
 #note {
     font-family: 'Courier New', Courier, monospace;
@@ -88,19 +89,64 @@
 
 #submitDiv {
     width: 50%;
-    display: flex;
+    height: 100px;
+    display: inline-flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 #submitDiv >input {
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     border: none;
-    box-shadow: 0px 0px 20px 5px;
-    font: 15px sans-serif;
+    box-shadow: 0px 0px 20px 2px;
+    font: 1.3rem sans-serif;
     cursor: pointer;
+    width: 100px;
 }
 #submitDiv >input:hover {
     background-color: grey;
     color: white;
+}
+
+@media only screen and (max-width: 400px){
+    #signupFormDiv {
+        width: 90%;
+    } 
+    #signupForm {
+        align-items: flex-start;
+    }
+    #signupForm > div {
+        width: 100%;
+    }
+    #usernameDiv > label {
+        width: 125px;
+        margin-right: 0;
+    }
+    #signupForm > div#nameDiv > label {
+        margin-right: 70px;
+    }
+    #signupForm > div#emailDiv > label {
+        margin-right: 75px;
+    }
+    #signupForm > div#passwordDiv > label {
+        margin-right: 40px;
+    }
+    #signupForm > div#repasswordDiv > label {
+        width: 90px;
+        margin-right: 35px;
+    }
+    #signupForm > div#passwordDiv > input {
+        margin-right: 5px;
+    }
+    #signupForm > div#passwordDiv > button {
+        margin-right: 0;
+    }
+    #signupForm > div#submitDiv {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 135px;
+    }
 }

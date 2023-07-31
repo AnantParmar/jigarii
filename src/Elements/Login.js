@@ -39,8 +39,10 @@ const Login = () => {
           if(resPonse.result)
           {
             const user = resPonse.data.user;
+
             user && user.photoURL && setImgURL(user.photoURL)
             setUser(user)
+            setData(resPonse.likedQuotesData)
             navigate('/')
           }
           else {
@@ -81,9 +83,9 @@ const Login = () => {
                 <button onClick={showPassword}><i id="passShowBtn" className="fa-solid fa-eye"></i></button>
             </div>
             <h4 id='error'></h4>
-            <h5 style={{margin: "10px 0px"}}>Don't have Account? <span style={{color: 'blue', textDecoration: 'Underline', cursor: "pointer"}} onClick={()=>{navigate('/signup')}}>Signup</span></h5>
             <div id='submitDiv'>
-                <input type='submit' value={"Login"}/>
+            <h5 style={{margin: "10px 0px"}}>Don't have Account? <span style={{color: 'blue', textDecoration: 'Underline', cursor: "pointer"}} onClick={()=>{navigate('/signup')}}>Signup</span></h5>
+                <input disabled={!password||!username} type='submit' value={"Login"}/>
             </div>
         </form>        
 
